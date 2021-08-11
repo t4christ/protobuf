@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: protobuf-deployment
+  labels:
+    app: protobuf
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: protobuf
+  template:
+    metadata:
+      labels:
+        app: protobof
+    spec:
+      containers:
+      - name: protobuf
+        image: protobuf
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi

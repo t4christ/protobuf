@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: protobuf-service
+spec:
+  selector:
+    app: protobuf
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
